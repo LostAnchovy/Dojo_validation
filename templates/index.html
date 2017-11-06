@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dojo Survey</title>
+<style>
+	#wrapper{
+		width: 960px;
+		height: auto
+	}
+	button{
+		width:75px;
+		height: 25px;
+		background-color: skyblue;
+		border-radius: 5px;
+	}
+	</style>
+</head>
+<body>
+   <div id= wrapper>
+   {% with messages = get_flashed_messages() %}
+   {% if messages %}
+     {% for message in messages %}
+       <p>{{message}}</p>
+     {% endfor %}
+   {% endif %}
+ {% endwith %}
+   
+     <form action="/register" method="POST" form="surveyform">
+        <fieldset>
+         <legend>contact information</legend>
+         <label>Your Name</label> <input type='text' name='name' placeholder="name">
+          <label>Dojo Location</label>
+          <select name="location">
+          	<option value="San Jose" name ="location">San Jose</option>
+          	<option value="Seattle" name ="location">Seattle</option>
+          	<option value="Austin" name ="location">Austin Text</option>
+          	<option value="New_York" name ="location">New York</option>
+          </select>
+          <label>Favorite Language</label>
+          <select name = "language">
+          	<option value="python" name="language">python</option>
+          	<option value="Java" name="language">Java</option>
+          	<option value="Javacript" name="language">Javascript</option>
+          	<option value="C#" name="language">C#</option>
+          </select>
+          <div>
+          <label>Comment (Optional)</label>
+          <br>
+          <textarea name ='comment' cols="30" rows='10' name="comment">Enter your comments here</textarea>
+          </div>
+    	     <input type="submit">
+    </div><!--wrapper content-->
+       
+    </body>
+</html
